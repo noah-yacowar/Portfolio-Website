@@ -9,7 +9,7 @@ const typedTextPerSpan = document.querySelector(".typed-text-period");
 let typedTextCurSpan=typedTextPreSpan;
 const cursorSpan = document.querySelector(".cursor");
 
-const textArray = ["A Software Developer.", "An Engineer.", "A Game Developer.", "A Web Designer."];
+const textArray = ["A Software Dev.", "An Engineer.", "A Game Dev.", "A Web Dev."];
 const typingDelay = 200;
 const erasingDelay = 100;
 const loadDelay = 1500;

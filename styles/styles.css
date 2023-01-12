@@ -230,14 +230,52 @@ section {
 .header-content .right-header .name {
   font-size: 3rem;
 }
-.header-content .right-header .name span {
+.header-content .right-header .name .typed-text {
   color: var(--color-secondary);
+}
+.header-content .right-header .name .name-text {
+  color: var(--color-secondary);
+}
+.header-content .right-header .name .cursor {
+  display: inline-block;
+  width: 3px;
+  background-color: var(--color-white);
+  margin-left: 0.2rem;
+  -webkit-animation: blink 1s infinite;
+          animation: blink 1s infinite;
+}
+.header-content .right-header .name .cursor.typing {
+  -webkit-animation: none;
+          animation: none;
 }
 .header-content .right-header p {
   margin: 1.5rem 0;
   line-height: 2rem;
 }
 
+@-webkit-keyframes blink {
+  49% {
+    background-color: var(--color-white);
+  }
+  50% {
+    background-color: transparent;
+  }
+  99% {
+    background-color: transparent;
+  }
+}
+
+@keyframes blink {
+  49% {
+    background-color: var(--color-white);
+  }
+  50% {
+    background-color: transparent;
+  }
+  99% {
+    background-color: transparent;
+  }
+}
 /*About*/
 .about-container {
   display: grid;

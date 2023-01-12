@@ -223,7 +223,23 @@
     .name{
       font-size: 3rem;
       span{
+        
+      }
+      .typed-text{
         color: var(--color-secondary);
+      }
+      .name-text{
+        color: var(--color-secondary);
+      }
+      .cursor{
+        display: inline-block;
+        width: 3px;
+        background-color: var(--color-white);
+        margin-left: 0.2rem;
+        animation: blink 1s infinite;
+      }
+      .cursor.typing{
+        animation: none;
       }
     }
     p{
@@ -232,6 +248,13 @@
     }
   }
 }
+
+@keyframes blink{
+  49% {  background-color: var(--color-white); }
+  50% { background-color: transparent; }
+  99% { background-color: transparent; }
+}
+
 
 /*About*/
 

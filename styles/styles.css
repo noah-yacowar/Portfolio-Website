@@ -648,6 +648,7 @@ section {
 
 .main-btn {
   margin-top: 1rem;
+  margin-bottom: 1rem;
   border-radius: 30px;
   color: inherit;
   font-weight: 600;

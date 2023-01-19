@@ -394,8 +394,11 @@ section {
 .about-stats .progress-bars .progress-bar .progress-container .progress .css {
   width: 70%;
 }
-.about-stats .progress-bars .progress-bar .progress-container .progress .javascipt {
+.about-stats .progress-bars .progress-bar .progress-container .progress .javascript {
   width: 70%;
+}
+.about-stats .progress-bars .progress-bar .progress-container .progress .java {
+  width: 80%;
 }
 .about-stats .progress-bars .progress-bar .progress-container .progress .c {
   width: 80%;
@@ -477,7 +480,7 @@ section {
 
 .portfolios {
   display: grid;
-  grid-template-columns: repeat(2, 1fr);
+  grid-template-columns: repeat(3, 1fr);
   grid-gap: 2rem;
   margin-top: 3rem;
 }

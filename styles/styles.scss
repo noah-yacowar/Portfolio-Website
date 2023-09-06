@@ -703,6 +703,8 @@
       color: var(--color-secondary);
     }
     .bg-text{
+      box-sizing: border-box;
+      margin-right: -3000px;
       position: absolute;
       top: 50%;
       left: 50%;

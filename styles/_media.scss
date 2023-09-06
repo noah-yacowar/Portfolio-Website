@@ -189,13 +189,23 @@
         }
     }
 }
-
+ 
 
 @media screen and (max-width: 520px){
     .section{
         padding: 3rem 0 !important;
         padding-bottom: 5rem !important;
     } 
+
+    .timeline{
+        .timeline-item{
+            padding-left: 0;
+            .tl-icon{
+                display:none;
+            }
+        }
+        
+    }
 }
 
 @media screen and (max-width: 510px){
@@ -208,14 +218,6 @@
         p{
             text-align: center;
         }
-    }
-    .timeline{
-        .timeline-item{
-            .tl-icon{
-                left: -22px !important;
-            }
-        }
-        
     }
     .contact-content-container{
         h4 {
@@ -231,7 +233,6 @@
         padding-top: 0;
     }
 }
-
 
 
 

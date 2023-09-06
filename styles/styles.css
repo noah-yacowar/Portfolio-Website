@@ -281,7 +281,7 @@ section {
   padding: 1.5rem;
   display: flex;
   flex-direction: column;
-}
+} 
 .about-container .right-about .about-item .abt-text .large-text {
   font-size: 3rem;
   font-weight: 700;

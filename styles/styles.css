@@ -229,6 +229,161 @@ section {
 .timeline .timeline-item h5 span { color: var(--color-grey-2); font-weight: 500; font-size: 1.2rem; }
 .timeline .timeline-item p { color: var(--color-grey-2); }
 
+/*TIMELINE NEW*/
+/* ===== ROADMAP TIMELINE (continuous curve + wide panels) ===== */
+.timeline.roadmap {
+  position: relative;
+  max-width: 1100px;
+  margin: 0 auto 4rem;
+  padding: 2rem 0;
+  display: block;                 /* override previous grid */
+}
+
+/* Continuous S-curve behind the cards */
+.timeline.roadmap .roadmap-line {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 0;
+  pointer-events: none;
+}
+.timeline.roadmap .roadmap-line path {
+  stroke: var(--color-secondary);
+  stroke-width: 6;
+  fill: none;
+  filter: drop-shadow(0 0 6px rgba(0,0,0,.25));
+  opacity: 0.95;
+}
+
+/* Wide cards, alternating left/right */
+.timeline.roadmap .timeline-item {
+  position: relative;
+  z-index: 1;
+  width: calc(70% - 2rem);        /* wider panels */
+  background: var(--color-primary);
+  border: 1px solid var(--color-grey-5);
+  border-radius: 14px;
+  box-shadow: var(--box-shadow-1);
+  padding: 1rem 1.25rem 1.1rem;
+  margin: 3.5rem 0;               /* vertical rhythm */
+  min-height: 120px;
+  transition: transform .2s ease, border-color .2s ease;
+  border-left: none;               /* kill old style */
+}
+.timeline.roadmap .timeline-item:nth-child(odd)  { margin-right: auto; }
+.timeline.roadmap .timeline-item:nth-child(even) { margin-left:  auto;  }
+
+/* Nuke the old icon nodes entirely (if any still in DOM) */
+.timeline.roadmap .timeline-item .tl-icon { display: none !important; }
+
+/* Date pill & text polish */
+.timeline.roadmap .timeline-item .tl-duration {
+  background: var(--color-grey-6);
+  border: 1px solid var(--color-grey-5);
+  padding: 0.2rem 0.6rem;
+  border-radius: 12px;
+  display: inline-block;
+  font-size: 0.85rem;
+  text-transform: uppercase;
+  font-weight: 600;
+}
+.timeline.roadmap .timeline-item h5 { margin: .6rem 0 .35rem; }
+.timeline.roadmap .timeline-item p  { color: var(--color-grey-2); }
+
+/* Node on the curve (center) */
+.timeline.roadmap .timeline-item::before {
+  content: "";
+  position: absolute;
+  left: 50%;
+  top: var(--y);
+  transform: translate(-50%, -50%);
+  width: 16px;
+  height: 16px;
+  border-radius: 50%;
+  background: var(--color-secondary);
+  border: 3px solid var(--color-primary);
+  box-shadow: 0 0 0 2px var(--color-secondary);
+}
+
+/* Short curved connector from the node to the card */
+.timeline.roadmap .timeline-item::after {
+  content: "";
+  position: absolute;
+  top: var(--y);
+  width: 44px;
+  height: 44px;
+  transform: translateY(-50%);
+  border: 3px solid var(--color-secondary);
+  background: transparent;
+}
+.timeline.roadmap .timeline-item:nth-child(odd)::after {
+  left: 50%;
+  border-left: none;
+  border-bottom: none;
+  border-top-right-radius: 44px;
+}
+.timeline.roadmap .timeline-item:nth-child(even)::after {
+  right: 50%;
+  border-right: none;
+  border-bottom: none;
+  border-top-left-radius: 44px;
+}
+
+/* Map each card to a Y along the path (matches SVG Ys) */
+.timeline.roadmap .timeline-item:nth-child(1) { --y:  60px; }
+.timeline.roadmap .timeline-item:nth-child(2) { --y: 160px; }
+.timeline.roadmap .timeline-item:nth-child(3) { --y: 260px; }
+.timeline.roadmap .timeline-item:nth-child(4) { --y: 360px; }
+.timeline.roadmap .timeline-item:nth-child(5) { --y: 460px; }
+.timeline.roadmap .timeline-item:nth-child(6) { --y: 560px; }
+
+/* Hover feedback */
+.timeline.roadmap .timeline-item:hover {
+  transform: translateY(-2px);
+  border-color: var(--color-secondary);
+}
+
+/* Mobile: single column with simple short connectors */
+@media (max-width: 700px) {
+  .timeline.roadmap .timeline-item,
+  .timeline.roadmap .timeline-item:nth-child(even),
+  .timeline.roadmap .timeline-item:nth-child(odd) {
+    width: 100%;
+    margin-left: 0;
+    margin-right: 0;
+  }
+  .timeline.roadmap .timeline-item::before { left: 28px; }
+  .timeline.roadmap .timeline-item:nth-child(odd)::after,
+  .timeline.roadmap .timeline-item:nth-child(even)::after {
+    left: 36px;
+    right: auto;
+    width: 28px;
+    height: 0;
+    border: 0;
+    border-top: 3px solid var(--color-secondary);
+    border-radius: 0;
+  }
+  .timeline.roadmap .roadmap-line { opacity: .22; } /* keep curve subtle on phones */
+}
+
+/* Remove per-item node + curved connector */
+.timeline.roadmap .timeline-item::before,
+.timeline.roadmap .timeline-item::after {
+  content: none !important;
+}
+
+/* Also be extra sure any legacy round icons are gone */
+.timeline .tl-icon {
+  display: none !important;
+}
+
+/* (Optional) if anything still peeks outside the container */
+.timeline.roadmap {
+  overflow: hidden;
+}
+
+
 /* =========================================================
    LEGACY PORTFOLIO GRID (thumbnails)
    ========================================================= */

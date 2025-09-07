@@ -31,7 +31,7 @@
                 </h1>
                 <div class="intro">
                     <p>
-                        An enthusiastic programmer, who prides himself on efficient solutions. On this site, you'll find information about my experience, skills, and projects, as well as a way to get in touch if you're interested in working together. Thank you for visiting and I hope you enjoy exploring.
+                        Hi, I’m Noah - a Mechatronics Engineering student who loves designing and building things that work well and feel great to use. I’m all about making projects that are efficient, affordable, and thoughtfully designed.
                     </p>
                 </div>
                 <div class="btn-container">
@@ -52,7 +52,7 @@
                 <div class="left-about">
                     <h4>Information About me</h4>
                     <p>
-                        As a software developer, I stay up to date with current technology and coding trends, and am driven by a passion to build better applications that are adaptable to new environments. My love for creative programming, game development, and AI fuels my desire to constantly push my skill boundries. I take great pride in my ability to craft innovative solutions that are not only technically sound but also visually stunning. My passion for the field is evident in every line of code I write and every project I undertake. 
+                        For me, engineering is as much about design as it is about function. I enjoy creating projects that balance technical problem-solving with a clean, simple experience. Whether I’m coding, prototyping hardware, or sketching ideas, I focus on keeping things intuitive, efficient, and accessible.
                     </p>
                     <div class="btn-container">
                         <a href="Documents/NoahResume.pdf" class="main-btn" download>
@@ -65,7 +65,7 @@
                 <div class="right-about">
                     <div class="about-item">
                         <div class="abt-text">
-                            <p class="large-text">4 Years</p>
+                            <p class="large-text">5 Years</p>
                             <p class="small-text">Coding <br \> Experience</p>
                         </div>
                     </div>
@@ -237,148 +237,281 @@
             <div class="main-title">
                 <h2>My <span>portfolio</span> <span class="bg-text">my portfolio</span></h2>
             </div>
-            <div class="portfolios">
-                <div class="portfolio-item">
-                    <div class="image">
-                        <img src="img/port4.png" alt="">
-                    </div>
-                    <div class="hover-items">
-                        <h3>Project Source</h3>
-                        <div class="icons">
-                            <a href="https://github.com/noah-yacowar/Multiplayer-Horror-Game" target = "_blank" class = "icon">
-                                <i class="fa-brands fa-github"></i>
-                            </a>
-                        </div>
-                    </div>
+            <!-- Project quick filter -->
+            <div class="project-toolbar">
+            <input id="project-filter" type="search" placeholder="Filter by keyword or tech (e.g., Unity, Python)" aria-label="Filter projects">
+            </div>
+
+            <div class="projects">
+            <!-- Project -->
+
+            <article class="project" data-tags="python imu motion-capture unity">
+            <a class="project-media" href="img/port5.png" target="_blank" aria-label="Open full image">
+                <img src="img/port5.png" alt="AI-MU Motion Capture screenshot or diagram">
+            </a>
+            <div class="project-body">
+                <h3 class="project-title">AI-MU Motion Capture</h3>
+                <p class="project-blurb">
+                Modular real-time motion capture using ESP8266-based IMU trackers and live visualization in Unity.
+                </p>
+
+                <details class="project-details">
+                <summary>Highlights</summary>
+                <ul class="project-highlights">
+                    <li>Custom ESP8266 + BNO080 IMU trackers streaming over Wi-Fi at 100 Hz</li>
+                    <li>Live skeleton visualization & sensor calibration</li>
+                    <li>Export tracking data to BVH or FBX for animation pipelines</li>
+                </ul>
+                </details>
+
+                <div class="project-meta">
+                <span class="tag">Python</span>
+                <span class="tag">IMU</span>
+                <span class="tag">Motion Capture</span>
+                <span class="tag">Unity</span>
                 </div>
-                <div class="portfolio-item">
-                    <div class="image">
-                        <img src="img/port3.jpg" alt="">
-                    </div>
-                    <div class="hover-items">
-                        <h3>Project Source</h3>
-                        <div class="icons">
-                            <a href="https://github.com/noah-yacowar/Pong-AI/tree/main" target = "_blank" class = "icon">
-                                <i class="fa-brands fa-github"></i>
-                            </a>
-                        </div>
-                    </div>
-                </div>
-                <div class="portfolio-item">
-                    <div class="image">
-                        <img src="img/port2.JPG" alt="">
-                    </div>
-                    <div class="hover-items">
-                        <h3>Project Source</h3>
-                        <div class="icons">
-                            <a href="https://github.com/noah-yacowar/Guitar-Playing-Robot" target = "_blank" class = "icon">
-                                <i class="fa-brands fa-github"></i>
-                            </a>
-                        </div>
-                    </div>
-                </div>
-                <div class="portfolio-item">
-                    <div class="image">
-                        <img src="img/port1.PNG" alt="">
-                    </div>
-                    <div class="hover-items">
-                        <h3>Project Source</h3>
-                        <div class="icons">
-                            <a href="https://github.com/noah-yacowar/Unity-HorrorFPS" target = "_blank" class = "icon">
-                                <i class="fa-brands fa-github"></i>
-                            </a>
-                        </div>
-                    </div>
+
+                <div class="project-links">
+                <a class="btn" href="https://github.com/noah-yacowar/AI-MU-Motion-Capture" target="_blank" rel="noopener">GitHub</a>
+                <!-- Optional: add a write-up or demo link -->
+                <!-- <a class="btn btn-ghost" href="/writeups/ai-mu-motion-capture.html">Case Study</a> -->
                 </div>
             </div>
+            </article>
+
+
+            <article class="project" data-tags="unity csharp multiplayer netcode horror">
+            <a class="project-media" href="img/port4.png" target="_blank">
+                <img src="img/port4.png" alt="Multiplayer Horror Game screenshot">
+            </a>
+            <div class="project-body">
+                <h3 class="project-title">Multiplayer Horror Game</h3>
+                <p class="project-blurb">
+                Co-op horror prototype with matchmaking, VOIP, and networked props.
+                </p>
+
+                <details class="project-details">
+                <summary>Highlights</summary>
+                <ul class="project-highlights">
+                    <li>Server-authoritative item &amp; interaction system</li>
+                    <li>Proximity voice chat with triggers</li>
+                    <li>Lobby, session browser, and player sync</li>
+                </ul>
+                </details>
+
+                <div class="project-meta">
+                <span class="tag">Unity</span>
+                <span class="tag">C#</span>
+                <span class="tag">Netcode</span>
+                <span class="tag">Multiplayer</span>
+                </div>
+
+                <div class="project-links">
+                <a class="btn" href="https://github.com/noah-yacowar/Multiplayer-Horror-Game" target="_blank" rel="noopener">GitHub</a>
+                <!-- Optional: add a devlog/case study link later
+                <a class="btn btn-ghost" href="/writeups/multiplayer-horror.html">Case Study</a> -->
+                </div>
+            </div>
+            </article>
+
+
+
+
+            <article class="project" data-tags="python reinforcement-learning vision">
+                <a class="project-media" href="img/port3.jpg" target="_blank"><img src="img/port3.jpg" alt="Pong AI screenshot"></a>
+                <div class="project-body">
+                    <h3 class="project-title">Pong AI</h3>
+                    <p class="project-blurb">Classic RL agent that learns to dominate Pong.</p>
+                    <details class="project-details">
+                        <summary>Highlights</summary>
+                        <ul class="project-highlights">
+                        <li>Reward shaping & exploration tuning</li>
+                        <li>Evaluation dashboards</li>
+                        </ul>
+                    </details>
+                    <div class="project-meta">
+                        <span class="tag">Python</span><span class="tag">RL</span>
+                    </div>
+                    <div class="project-links">
+                        <a class="btn" href="https://github.com/noah-yacowar/Pong-AI/tree/main" target="_blank" rel="noopener">GitHub</a>
+                    </div>
+                </div>
+            </article>
+
+            <article class="project" data-tags="c++ robotics embedded mechanical">
+                <a class="project-media" href="img/port2.JPG" target="_blank"><img src="img/port2.JPG" alt="Guitar-playing robot photo"></a>
+                <div class="project-body">
+                <h3 class="project-title">Guitar-Playing Robot</h3>
+                <p class="project-blurb">Custom mechatronic strummer with real-time note control.</p>
+                <details class="project-details">
+                    <summary>Highlights</summary>
+                    <ul class="project-highlights">
+                    <li>Servo control & timing</li>
+                    <li>Note scheduling & debouncing</li>
+                    </ul>
+                </details>
+                <div class="project-meta">
+                    <span class="tag">C++</span><span class="tag">Robotics</span><span class="tag">Embedded</span>
+                </div>
+                <div class="project-links">
+                    <a class="btn" href="https://github.com/noah-yacowar/Guitar-Playing-Robot" target="_blank" rel="noopener">GitHub</a>
+                </div>
+                </div>
+            </article>
+
+            <article class="project" data-tags="unity csharp horror fps">
+            <a class="project-media" href="img/port1.PNG" target="_blank" aria-label="Open full image">
+                <img src="img/port1.PNG" alt="Unity Horror FPS screenshot">
+            </a>
+            <div class="project-body">
+                <h3 class="project-title">Unity Horror FPS</h3>
+                <p class="project-blurb">
+                First-person horror shooter prototype built in Unity—designed for tense atmosphere and responsive gameplay.
+                </p>
+
+                <details class="project-details">
+                <summary>Highlights</summary>
+                <ul class="project-highlights">
+                    <li>Procedural lighting & dynamic triggers</li>
+                    <li>Interactive HUD + environmental sound cues</li>
+                    <li>Smooth locomotion and horror pacing fine-tuning</li>
+                </ul>
+                </details>
+
+                <div class="project-meta">
+                <span class="tag">Unity</span>
+                <span class="tag">C#</span>
+                <span class="tag">Horror</span>
+                <span class="tag">FPS</span>
+                </div>
+
+                <div class="project-links">
+                <a class="btn" href="https://github.com/noah-yacowar/Unity-HorrorFPS" target="_blank" rel="noopener">GitHub</a>
+                <!-- Optional: future write-up link
+                <a class="btn btn-ghost" href="/writeups/unity-horrorfps.html">Case Study</a> -->
+                </div>
+            </div>
+            </article>
+
+            </div>
         </section>
+
         <section class="section sec5 contact" id="contact">
             <div class="contact-container">
                 <div class="main-title">
-                    <h2>Contact <span>Me</span> <span class="bg-text">Contact Me</span></h2>
+                <h2>Contact <span>Me</span> <span class="bg-text">Contact Me</span></h2>
                 </div>
+
                 <div class="contact-content-container">
-                    <div class="left-contact">
-                        <h4>Contact me here</h4>
-                        <p>
-                            Thank you for taking the time to visit my website and learn more about my work skills and experience. Reach out if you're looking for a software developer, or have questions regarding my skills. Thank you for your interest, and I look forward to hearing from you!
-                        </p>
-                        <div class="contact-info">
-                            <div class="contact-item">
-                                <div class="icon">
-                                    <i class="fa-solid fa-location-arrow"></i>
-                                    Location:
-                                </div>
-                                <p>
-                                    Waterloo Ontario, Canada
-                                </p>
-                            </div>
+                <!-- Left: Info + Social + Map -->
+                <aside class="left-contact card">
+                    <h4>Contact me here</h4>
+                    <p>
+                    Thanks for visiting! If you’re looking for a developer or just want to chat about a project, reach out below.
+                    </p>
 
-                            <div class="contact-item">
-                                <div class="icon">
-                                    <i class="fa-solid fa-envelope"></i>
-                                    <span>Email:</span>
-                                </div>
-                                <p>
-                                    <span>noahyacowar@gmail.com</span>
-                                </p>
-                            </div>
-
-                            <div class="contact-item">
-                                <div class="icon">
-                                    <i class="fa-solid fa-user-graduate"></i>
-                                    <span>Education:</span>
-                                </div>
-                                <p> 
-                                    <span>University of Waterloo, Waterloo</span>
-                                </p>
-                            </div>
-
-                            <div class="contact-item">
-                                <div class="icon">
-                                    <i class="fa-solid fa-mobile-screen-button"></i>
-                                    <span>Mobile Number:</span>
-                                </div>
-                                <p>
-                                    <span>+1 (647)-870-6663</span>
-                                </p>
-                            </div> 
+                    <ul class="contact-info">
+                    <li class="contact-item">
+                        <div class="icon"><i class="fa-solid fa-location-dot"></i></div>
+                        <div>
+                        <div class="label">Location</div>
+                        <div class="value">Waterloo, Ontario, Canada</div>
                         </div>
-                        <div class="contact-icons">
-                            <div class="contact-icon">
-                                <a href="" target = "_blank">
-                                    <i class="fa-brands fa-linkedin"></i>
-                                </a>
-                                <a href="" target = "_blank">
-                                    <i class="fa-brands fa-github"></i>
-                                </a>
-                            </div>
+                    </li>
+
+                    <li class="contact-item">
+                        <div class="icon"><i class="fa-solid fa-envelope"></i></div>
+                        <div>
+                        <div class="label">Email</div>
+                        <div class="value"><a href="mailto:noahyacowar@gmail.com">noahyacowar@gmail.com</a></div>
+                        </div>
+                    </li>
+
+                    <li class="contact-item">
+                        <div class="icon"><i class="fa-solid fa-user-graduate"></i></div>
+                        <div>
+                        <div class="label">Education</div>
+                        <div class="value">University of Waterloo</div>
+                        </div>
+                    </li>
+
+                    <li class="contact-item">
+                        <div class="icon"><i class="fa-solid fa-mobile-screen-button"></i></div>
+                        <div>
+                        <div class="label">Mobile</div>
+                        <div class="value"><a href="tel:+16478706663">+1 (647) 870-6663</a></div>
+                        </div>
+                    </li>
+                    </ul>
+
+                    <div class="contact-icons">
+                    <a class="social-link" href="https://www.linkedin.com/in/noah-yacowar/" target="_blank" rel="noopener">
+                        <i class="fa-brands fa-linkedin"></i><span>LinkedIn</span>
+                    </a>
+                    <a class="social-link" href="https://github.com/noah-yacowar" target="_blank" rel="noopener">
+                        <i class="fa-brands fa-github"></i><span>GitHub</span>
+                    </a>
+                    </div>
+
+                    <!-- Map (no API key needed) -->
+                    <div class="map-card">
+                    <iframe
+                        title="Waterloo, Ontario map"
+                        loading="lazy"
+                        referrerpolicy="no-referrer-when-downgrade"
+                        src="https://www.google.com/maps?q=Waterloo,Ontario&output=embed">
+                    </iframe>
+                    </div>
+                </aside>
+
+                <!-- Right: Form -->
+                <div class="right-contact card">
+                    <form class="contact-form"
+                        method="POST"
+                        action="https://formsubmit.co/noahyacowar@gmail.com"
+                        enctype="multipart/form-data">
+                    <!-- formsubmit options -->
+                    <input type="hidden" name="_captcha" value="false">
+                    <!-- Redirect after success (optional): -->
+                    <!-- <input type="hidden" name="_next" value="https://your-site.com/thanks.html"> -->
+                    <!-- Autoresponse (optional): -->
+                    <!-- <input type="hidden" name="_autoresponse" value="Thanks for reaching out—I'll get back to you soon. -Noah"> -->
+                    <!-- Honeypot (spam trap) -->
+                    <input type="text" name="_honey" style="display:none">
+
+                    <div class="input-row">
+                        <div class="input-control">
+                        <label for="c-name">Your Name</label>
+                        <input id="c-name" name="name" type="text" required placeholder="Jane Doe">
+                        </div>
+                        <div class="input-control">
+                        <label for="c-email">Your Email</label>
+                        <input id="c-email" name="email" type="email" required placeholder="jane@example.com">
                         </div>
                     </div>
-                    <div class="right-contact">
-                        <form id="GFG" method="POST" action="https://formsubmit.co/noahyacowar@gmail.com" enctype="multipart/form-data" class="contact-form">
-                            <input type="hidden" name="_captcha" value="false">
-                            <div class="input-control i-c-2">
-                                <input type="text" name="name" required placeholder="YOUR NAME">
-                                <input type="email" name="email" required placeholder="YOUR EMAIL">
-                            </div>
-                            <div class="input-control">
-                                <input type="text" name="_subject" required placeholder="ENTER SUBJECT">
-                            </div>
-                            <div class="input-control">
-                                <textarea name="message" id="" cols="15" rows="8" placeholder="Message Here..."></textarea>
-                            </div>
-                            <div class="submit-btn">
-                                <a href="#" onclick="Submit()" class="main-btn">
-                                    <span class="btn-text">Submit</span>
-                                    <span class="btn-icon"><i class="fa-solid fa-paper-plane"></i></span>
-                                </a>
-                            </div>
-                        </form>
+
+                    <div class="input-control">
+                        <label for="c-subject">Subject</label>
+                        <input id="c-subject" name="_subject" type="text" required placeholder="Let’s work together">
                     </div>
+
+                    <div class="input-control">
+                        <label for="c-message">Message</label>
+                        <textarea id="c-message" name="message" rows="7" required placeholder="Tell me about your idea…"></textarea>
+                    </div>
+
+                    <div class="submit-btn">
+                        <a href="#" onclick="this.closest('form').submit();" class="main-btn">
+                            <span class="btn-text">Submit</span>
+                            <span class="btn-icon"><i class="fa-solid fa-paper-plane"></i></span>
+                        </a>
+                    </div>
+                    </form>
+                </div>
                 </div>
             </div>
-        </section>
+            </section>
+
     </main>
 
     <div class="controls">

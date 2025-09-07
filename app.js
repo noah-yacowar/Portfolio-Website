@@ -111,3 +111,34 @@ PageTransitions();
 document.addEventListener("DOMContentLoaded", function() {
     if(textArray.length) setTimeout(type, loadDelay);
 }); 
+
+document.addEventListener('DOMContentLoaded', () => {
+  const input = document.getElementById('project-filter');
+  if (!input) return;
+
+  const cards = Array.from(document.querySelectorAll('.projects .project'));
+
+  const norm = s => (s || '').toLowerCase().trim();
+  const tokensOf = s => norm(s).split(/[\s,]+/).filter(Boolean);
+
+  const runFilter = () => {
+    const tokens = tokensOf(input.value);
+    cards.forEach(card => {
+      if (tokens.length === 0) { card.style.display = ''; return; }
+
+      const title = card.querySelector('.project-title')?.textContent || '';
+      const blurb = card.querySelector('.project-blurb')?.textContent || '';
+      const tagsAttr = card.dataset.tags || '';
+      const tagsText = Array.from(card.querySelectorAll('.tag')).map(t => t.textContent).join(' ');
+      const haystack = norm([title, blurb, tagsAttr, tagsText].join(' '));
+
+      const match = tokens.every(tok => haystack.includes(tok));
+      card.style.display = match ? '' : 'none';
+    });
+  };
+
+  let timer;
+  input.addEventListener('input', () => { clearTimeout(timer); timer = setTimeout(runFilter, 60); });
+  input.addEventListener('keydown', e => { if (e.key === 'Escape') { input.value = ''; runFilter(); }});
+  runFilter();
+});

@@ -2,556 +2,377 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>NoahYacowar</title>
-    
-    <link rel="shortcut icon" type="image/png" href="img/favicon1.png?">
+    <title>Noah Yacowar</title>
+    <link rel="shortcut icon" type="image/png" href="img/favicon1.png">
 
-    <link rel="stylesheet" href="styles/styles.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css" integrity="sha512-MV7K8+y+gLIBoVD59lQIYicR65iaqukzvf/nwasF0nqhPay5w/9lJmVM2hMDcnK1OnMGCdVK+iQrJ7lzPJQd1w==" crossorigin="anonymous" referrerpolicy="no-referrer" />
-    <link href="https://fonts.googleapis.com/css2?family=Poppins&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500&family=Space+Grotesk:wght@400;500;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles/lab.css">
 </head>
-<body class="main-content">
+<body>
 
-    <header class="section sec1 header active" id="home">
-        <div class="header-content">
-            <div class="left-header">
-                <div class="h-shape"></div>
-                <div class="image">
-                    <img src="img/hero.png" alt="">
-                </div>
-            </div>
-            <div class="right-header">
-                <h1 class="name">
-                    Hi, I'm <span class="name-text">Noah Yacowar.</span></br>
-                    <span class = "typed-text-prefix"></span><span class = "typed-text"></span><span class = "cursor">&nbsp;</span>
-                </h1>
-                <div class="intro">
-                    <p>
-                        Hi, I’m Noah - a Mechatronics Engineering student who loves designing and building things that work well and feel great to use. I’m all about making projects that are efficient, affordable, and thoughtfully designed.
-                    </p>
-                </div>
-                <div class="btn-container">
-                    <a href="Documents/NoahResume.pdf" class="main-btn" download>
-                        <span class="btn-text">Download CV</span>
-                        <span class="btn-icon"><i class="fa-solid fa-file-arrow-down"></i></span>
-                    </a>
-                </div>
-            </div>
+    <header class="masthead">
+        <p class="label">Portfolio - Index of Projects</p>
+        <h1 class="sr-only">Noah Yacowar</h1>
+
+        <!-- Injection-moulded name: grey mold, orange plastic fills the cavity -->
+        <svg class="mold" viewBox="0 0 1100 300" aria-hidden="true">
+            <title>Click to run the cycle again</title>
+            <defs>
+                <text id="nm" x="195" y="192" font-size="120" font-weight="700"
+                      textLength="840" lengthAdjust="spacing">Noah Yacowar</text>
+
+                <clipPath id="cavity-clip"><use href="#nm"/></clipPath>
+
+                <linearGradient id="steel" x1="0" y1="0" x2="0" y2="1">
+                    <stop offset="0" stop-color="#dcdcd8"/>
+                    <stop offset="1" stop-color="#bcbcb7"/>
+                </linearGradient>
+                <linearGradient id="barrel" x1="0" y1="0" x2="0" y2="1">
+                    <stop offset="0" stop-color="#9a9a95"/>
+                    <stop offset=".45" stop-color="#e2e2de"/>
+                    <stop offset="1" stop-color="#7d7d78"/>
+                </linearGradient>
+                <linearGradient id="front" x1="0" y1="0" x2="1" y2="0">
+                    <stop offset="0" stop-color="#ffd59a" stop-opacity="0"/>
+                    <stop offset="1" stop-color="#fff1d6" stop-opacity=".9"/>
+                </linearGradient>
+
+                <!-- recessed / engraved look for the empty cavity -->
+                <filter id="inset" x="-5%" y="-5%" width="110%" height="110%">
+                    <feOffset in="SourceAlpha" dx="0" dy="4" result="off"/>
+                    <feGaussianBlur in="off" stdDeviation="2.5" result="blur"/>
+                    <feComposite in="SourceAlpha" in2="blur" operator="arithmetic" k2="1" k3="-1" result="inner"/>
+                    <feFlood flood-color="#000" flood-opacity=".5"/>
+                    <feComposite in2="inner" operator="in" result="shadow"/>
+                    <feMerge><feMergeNode in="SourceGraphic"/><feMergeNode in="shadow"/></feMerge>
+                </filter>
+            </defs>
+
+            <!-- mold block -->
+            <rect x="130" y="40" width="950" height="220" rx="8" fill="url(#steel)" stroke="#a3a39e" stroke-width="2"/>
+            <rect x="142" y="52" width="926" height="196" rx="4" fill="none" stroke="#cfcfca" stroke-width="1"/>
+            <g fill="#c4c4bf" stroke="#92928d" stroke-width="1.5">
+                <circle cx="158" cy="68" r="8"/><circle cx="1052" cy="68" r="8"/>
+                <circle cx="158" cy="232" r="8"/><circle cx="1052" cy="232" r="8"/>
+            </g>
+            <g stroke="#92928d" stroke-width="1.5">
+                <path d="M153 68h10M1047 68h10M153 232h10M1047 232h10"/>
+            </g>
+
+            <!-- sprue channel + letter cavity -->
+            <rect x="130" y="144" width="72" height="12" fill="#9b9b96" filter="url(#inset)"/>
+            <use href="#nm" fill="#9b9b96" stroke="#85857f" stroke-width="1.2" filter="url(#inset)"/>
+
+            <!-- plastic in the sprue -->
+            <line x1="130" y1="150" x2="202" y2="150" stroke="#ffb547" stroke-width="10"
+                  stroke-dasharray="72" stroke-dashoffset="72">
+                <animate attributeName="stroke-dashoffset" from="72" to="0" begin="0.8s" dur="0.3s" fill="freeze"/>
+                <animate attributeName="stroke" values="#ffb547;#ff5a1f" begin="3.3s" dur="1.2s" fill="freeze"/>
+                <!-- sprue gets trimmed off the finished part -->
+                <animate attributeName="opacity" from="1" to="0" begin="4.9s" dur="0.5s" fill="freeze"/>
+            </line>
+
+            <!-- plastic filling the letters, left to right from the gate -->
+            <g clip-path="url(#cavity-clip)">
+                <rect x="185" y="60" width="0" height="180" fill="#ffb547">
+                    <animate attributeName="width" from="0" to="880" begin="1.05s" dur="2.3s"
+                             calcMode="spline" keyTimes="0;1" keySplines=".35 0 .55 1" fill="freeze"/>
+                    <animate attributeName="fill" values="#ffb547;#ff5a1f" begin="3.3s" dur="1.2s" fill="freeze"/>
+                </rect>
+                <rect x="150" y="60" width="36" height="180" fill="url(#front)" opacity="0">
+                    <set attributeName="opacity" to="1" begin="1.05s"/>
+                    <animate attributeName="x" from="150" to="1030" begin="1.05s" dur="2.3s"
+                             calcMode="spline" keyTimes="0;1" keySplines=".35 0 .55 1" fill="freeze"/>
+                    <animate attributeName="opacity" from="1" to="0" begin="3.3s" dur="0.4s" fill="freeze"/>
+                </rect>
+            </g>
+
+            <!-- injection unit: hopper, barrel, heater bands, nozzle -->
+            <g transform="translate(-80 0)">
+                <animateTransform attributeName="transform" type="translate" from="-80 0" to="0 0"
+                                  begin="0.2s" dur="0.6s" calcMode="spline" keyTimes="0;1" keySplines=".4 0 .2 1" fill="freeze"/>
+                <animateTransform attributeName="transform" type="translate" from="0 0" to="-60 0"
+                                  begin="4.5s" dur="0.6s" calcMode="spline" keyTimes="0;1" keySplines=".4 0 .2 1" fill="freeze"/>
+                <polygon points="34,128 84,128 96,92 22,92" fill="#c9c9c4" stroke="#8a8a85" stroke-width="1.5"/>
+                <rect x="0" y="128" width="120" height="44" fill="url(#barrel)" stroke="#7d7d78" stroke-width="1.5"/>
+                <g fill="#55554f">
+                    <rect x="16" y="124" width="10" height="52" rx="2"/>
+                    <rect x="48" y="124" width="10" height="52" rx="2"/>
+                    <rect x="94" y="124" width="10" height="52" rx="2"/>
+                </g>
+                <polygon points="120,134 132,143 132,157 120,166" fill="#8a8a85"/>
+            </g>
+
+            <!-- machine readout -->
+            <text class="readout" x="176" y="246" fill="#85857f">MOLD NY-01 / CAV 1</text>
+            <text class="readout" x="1034" y="246" text-anchor="end" fill="#ff5a1f" visibility="hidden">
+                &#9679; INJECTING
+                <set attributeName="visibility" to="visible" begin="0.8s"/>
+                <set attributeName="visibility" to="hidden" begin="4.5s"/>
+            </text>
+            <text class="readout" x="1034" y="246" text-anchor="end" fill="#55554f" visibility="hidden">
+                CYCLE 001 &#183; PART OK
+                <set attributeName="visibility" to="visible" begin="4.5s"/>
+            </text>
+        </svg>
+        <div class="inject-row">
+            <button class="inject-btn" type="button" disabled>INJECT</button>
         </div>
+
+        <p class="label muted">Mechatronics Engineering &middot; University of Waterloo</p>
     </header>
-    <main>
-        <section class="section sec2 about" id="about">
-            <div class="main-title">
-                <h2>About <span>me</span> <span class="bg-text">about me</span></h2>
+
+    <main class="projects">
+
+        <!-- 01 -->
+        <article class="project">
+            <div class="project-head">
+                <span class="index">01</span>
+                <h2>Fixtr <span class="sub">- PCB probing agent</span></h2>
+                <span class="wip">Work in progress</span>
             </div>
-            <div class="about-container">
-                <div class="left-about">
-                    <h4>Information About me</h4>
-                    <p>
-                        For me, engineering is as much about design as it is about function. I enjoy creating projects that balance technical problem-solving with a clean, simple experience. Whether I’m coding, prototyping hardware, or sketching ideas, I focus on keeping things intuitive, efficient, and accessible.
-                    </p>
-                    <div class="btn-container">
-                        <a href="Documents/NoahResume.pdf" class="main-btn" download>
-                            <span class="btn-text">Download CV</span>
-                            <span class="btn-icon"><i class="fa-solid fa-file-arrow-down"></i></span>
-                        </a>
-                    </div>
-                </div>
-                    
-                <div class="right-about">
-                    <div class="about-item">
-                        <div class="abt-text">
-                            <p class="large-text">5 Years</p>
-                            <p class="small-text">Coding <br \> Experience</p>
-                        </div>
-                    </div>
-                    <div class="about-item">
-                        <div class="abt-text">
-                            <p class="large-text">Engineering Student</p>
-                            <p class="small-text">Mechatronics at Waterloo</p>
-                        </div>
-                    </div>
-                    <div class="about-item">
-                        <div class="abt-text">
-                            <p class="large-text">High Interest</p>
-                            <p class="small-text">In Robotics, Game Dev, R&D...</p>
-                        </div>
-                    </div>
-                    <div class="about-item">
-                        <div class="abt-text">
-                            <p class="large-text">96%</p>
-                            <p class="small-text">in college level C++ programming</p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="about-stats">
-                <h4 class="stat-title">My Skills</h4>
-                <div class="progress-bars">
-                    <div class="progress-bar">
-                        <p class="prog-title">Python</p>
-                        <div class="progress-container">
-                            <p class="prog text">90%</p>
-                            <div class="progress">
-                                <span class="python"></span>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="progress-bar">
-                        <p class="prog-title">C#</p>
-                        <div class="progress-container">
-                            <p class="prog text">90%</p>
-                            <div class="progress">
-                                <span class="csharp"></span>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="progress-bar">
-                        <p class="prog-title">C++</p>
-                        <div class="progress-container">
-                            <p class="prog text">90%</p>
-                            <div class="progress">
-                                <span class="cplusplus"></span>
-                            </div>
-                        </div>
-                    </div>
-                    
-                    <div class="progress-bar">
-                        <p class="prog-title">html5</p>
-                        <div class="progress-container">
-                            <p class="prog text">90%</p>
-                            <div class="progress">
-                                <span class="html"></span>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="progress-bar">
-                        <p class="prog-title">C</p>
-                        <div class="progress-container">
-                            <p class="prog text">80%</p>
-                            <div class="progress">
-                                <span class="c"></span>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="progress-bar">
-                        <p class="prog-title">Java</p>
-                        <div class="progress-container">
-                            <p class="prog text">80%</p>
-                            <div class="progress">
-                                <span class="java"></span>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="progress-bar">
-                        <p class="prog-title">CSS</p>
-                        <div class="progress-container">
-                            <p class="prog text">70%</p>
-                            <div class="progress">
-                                <span class="css"></span>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="progress-bar">
-                        <p class="prog-title">JavaScipt</p>
-                        <div class="progress-container">
-                            <p class="prog text">70%</p>
-                            <div class="progress">
-                                <span class="javascript"></span>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            
-            <!-- ROADMAP TIMELINE -->
-            <h4 class="stat-title">My Timeline</h4>
-
-            <div class="timeline roadmap">
-            <svg class="roadmap-line" viewBox="0 0 600 1220" preserveAspectRatio="none" aria-hidden="true">
-                <path d="
-                M300,60   C360,60   360,160  300,160
-                C240,160  240,260  300,260
-                C360,260  360,360  300,360
-                C240,360  240,460  300,460
-                C360,460  360,560  300,560
-                C240,560  240,660  300,660
-                C360,660  360,760  300,760
-                C240,760  240,860  300,860
-                C360,860  360,960  300,960
-                C240,960  240,1060 300,1060
-                C360,1060 360,1160 300,1160
-                "/>
-            </svg>
-
-            <!-- Haas Lab -->
-            <div class="timeline-item">
-                <p class="tl-duration">May 2025 – August 2025</p>
-                <h5>Researcher<span> - Haas Lab, University of Waterloo</span></h5>
-                <p>
-                Worked on masonry-focused research, developing prototypes to improve jobsite safety and efficiency.
-                Designed a Unity + custom-hardware training suite with QR enrollment, sensor pairing, real-time ergonomics, 
-                and motion capture tracker integration.
-                </p>
-            </div>
-
-            <!-- Exo Insights -->
-            <div class="timeline-item">
-                <p class="tl-duration">September 2024 – December 2024</p>
-                <h5>Software Developer<span> - Exo Insights Corp.</span></h5>
-                <p>
-                Developing Android (Unity + Java) and desktop (PySide) applications to capture and stream live worker data
-                (audio, heart rate, IMU motion). Built two-way audio communication, heart rate monitoring, and a general messaging system
-                to support worker safety and training scenarios.
-                </p>
-            </div>
-
-            <!-- Keep the rest of your existing items -->
-            <div class="timeline-item">
-                <p class="tl-duration">January 2024 - April 2024</p>
-                <h5>System QA<span> - Virtek Vision International Inc.</span></h5>
-                <p>Built the test automation infrastructure for the company's software in a small development team from scratch.</p>
-            </div>
-
-            <div class="timeline-item">
-                <p class="tl-duration">September 2023 - December 2023</p>
-                <h5>Electrical Team Member<span> - Waterloo Rocketry</span></h5>
-                <p>Beginning my journey as a member of the University of Waterloo's electrical team, working on PCB architectures.</p>
-            </div>
-
-            <div class="timeline-item">
-                <p class="tl-duration">July 2023 - December 2023</p>
-                <h5>Computer Vision Team Member<span> - Waterloo Aerial Robotics Group</span></h5>
-                <p>Worked on various computer vision aspects of a drone currently being developed for future competitions.</p>
-            </div>
-
-            <div class="timeline-item">
-                <p class="tl-duration">May 2023 - August 2023</p>
-                <h5>Video Game Developer<span> - Defence Research Development Canada</span></h5>
-                <p>Developed a VR test-bed environment in Unity for research on soldiers' interactions with HUD elements.</p>
-            </div>
-
-            <div class="timeline-item">
-                <p class="tl-duration">June 2022 - August 2022</p>
-                <h5>Equestrian Instructor<span> - Well Dressed Equestrian</span></h5>
-                <p>Watched over young children, giving them horse-riding lessons. Also responsible for horses.</p>
-            </div>
-
-            <div class="timeline-item">
-                <p class="tl-duration">April 2020 - June 2022</p>
-                <h5>Leading Member of CS club<span> - Personal venture</span></h5>
-                <p>Led a group that averaged 7 students and two other instructors; from the basics of programming in OOP, to data sorting and game dev.</p>
-            </div>
-            </div>
-
-
-        </section>
-        <section class="section sec3 portfolio" id="portfolio">
-            <div class="main-title">
-                <h2>My <span>portfolio</span> <span class="bg-text">my portfolio</span></h2>
-            </div>
-            <!-- Project quick filter -->
-            <div class="project-toolbar">
-            <input id="project-filter" type="search" placeholder="Filter by keyword or tech (e.g., Unity, Python)" aria-label="Filter projects">
-            </div>
-
-            <div class="projects">
-            <!-- Project -->
-
-            <article class="project" data-tags="python imu motion-capture unity">
-            <a class="project-media" href="img/port5.png" target="_blank" aria-label="Open full image">
-                <img src="img/port5.png" alt="AI-MU Motion Capture screenshot or diagram">
-            </a>
+            <figure class="plate">
+                <a href="img/fixtr.png" target="_blank" rel="noopener">
+                    <img src="img/fixtr.png" alt="Fixtr dual-gantry machine">
+                </a>
+                <figcaption>Fig. 01 - Dual-gantry build over the PCB bed</figcaption>
+            </figure>
             <div class="project-body">
-                <h3 class="project-title">AI-MU Motion Capture</h3>
-                <p class="project-blurb">
-                Modular real-time motion capture using ESP8266-based IMU trackers and live visualization in Unity.
-                </p>
+                <p class="blurb">An automated agent for probing printed circuit boards. Still in development.</p>
+                <ul class="highlights">
+                    <li>Dual XY gantry with two probes that can interface with different bench tools (oscilloscopes, etc.)</li>
+                    <li>Closed-loop motion control for repeatable probe placement</li>
+                    <li>Calibration routine that aligns each probe tip to the camera</li>
+                </ul>
+                <div class="meta">
+                    <div class="tags"><span>Mechatronics</span><span>Closed-Loop Control</span><span>Computer Vision</span><span>PCB</span></div>
+                </div>
+            </div>
+        </article>
 
-                <details class="project-details">
-                <summary>Highlights</summary>
-                <ul class="project-highlights">
-                    <li>Custom ESP8266 + BNO080 IMU trackers streaming over Wi-Fi at 100 Hz</li>
-                    <li>Live skeleton visualization & sensor calibration</li>
+        <!-- 02 -->
+        <article class="project">
+            <div class="project-head">
+                <span class="index">02</span>
+                <h2>Simulux <span class="sub">- AR peripheral</span></h2>
+            </div>
+            <figure class="plate">
+                <a href="img/simulux.jpg" target="_blank" rel="noopener">
+                    <img src="img/simulux.jpg" alt="Simulux keyboard and trackpad boards with 3D-printed internals">
+                </a>
+                <figcaption>Fig. 02 - Keyboard and trackpad boards with 3D-printed internals</figcaption>
+            </figure>
+            <div class="project-body">
+                <p class="blurb">An augmented reality peripheral with a capacitive trackpad and keyboard, built to let people interact with their AR/VR glasses.</p>
+                <ul class="highlights">
+                    <li>Capacitive trackpad designed around an Azoteq touch controller IC</li>
+                    <li>Custom keyboard PCB alongside the trackpad board</li>
+                    <li>Aluminum outer case with DFM for CNC machining</li>
+                    <li>3D-printed internal structure holding the boards</li>
+                    <li>Connects wirelessly over Bluetooth</li>
+                </ul>
+                <div class="meta">
+                    <div class="tags"><span>AR/VR</span><span>PCB Design</span><span>CNC</span><span>3D Printing</span></div>
+                </div>
+            </div>
+        </article>
+
+        <!-- 03 -->
+        <article class="project">
+            <div class="project-head">
+                <span class="index">03</span>
+                <h2>AI-MU <span class="sub">- Wearable mocap</span></h2>
+            </div>
+            <figure class="plate">
+                <a href="img/port5.png" target="_blank" rel="noopener">
+                    <img src="img/port5.png" alt="AI-MU Motion Capture">
+                </a>
+                <figcaption>Fig. 03 - ESP8266 IMU trackers, live in Unity</figcaption>
+            </figure>
+            <div class="project-body">
+                <p class="blurb">Modular, wearable real-time motion capture built from custom IMU trackers, with live visualization in Unity.</p>
+                <ul class="highlights">
+                    <li>Sensor calibration that accounts for body offset errors and custom mounting positions</li>
+                    <li>Live skeleton built with forward kinematics, extending outward from the hip</li>
+                    <li>Custom tracker PCB: ESP8266 + BNO080 IMU streaming over Wi-Fi at 100 Hz</li>
+                    <li>Two-part SolidWorks enclosure for each tracker, plus a latching wearable holder it clips into</li>
                     <li>Export tracking data to BVH or FBX for animation pipelines</li>
                 </ul>
-                </details>
-
-                <div class="project-meta">
-                <span class="tag">Python</span>
-                <span class="tag">IMU</span>
-                <span class="tag">Motion Capture</span>
-                <span class="tag">Unity</span>
-                </div>
-
-                <div class="project-links">
-                <a class="btn" href="https://github.com/noah-yacowar/AI-MU-Motion-Capture" target="_blank" rel="noopener">GitHub</a>
-                <!-- Optional: add a write-up or demo link -->
-                <!-- <a class="btn btn-ghost" href="/writeups/ai-mu-motion-capture.html">Case Study</a> -->
+                <div class="meta">
+                    <div class="tags"><span>PCB Design</span><span>SolidWorks</span><span>IMU</span><span>Unity</span><span>Python</span></div>
+                    <a class="link" href="https://github.com/noah-yacowar/AI-MU-Motion-Capture" target="_blank" rel="noopener">GitHub &rarr;</a>
                 </div>
             </div>
-            </article>
+        </article>
 
-
-            <article class="project" data-tags="unity csharp multiplayer netcode horror">
-            <a class="project-media" href="img/port4.png" target="_blank">
-                <img src="img/port4.png" alt="Multiplayer Horror Game screenshot">
-            </a>
+        <!-- 04 -->
+        <article class="project">
+            <div class="project-head">
+                <span class="index">04</span>
+                <h2>Multiplayer Horror Game</h2>
+            </div>
+            <figure class="plate">
+                <a href="img/port4.png" target="_blank" rel="noopener">
+                    <img src="img/port4.png" alt="Multiplayer Horror Game">
+                </a>
+                <figcaption>Fig. 04 - Co-op session in progress</figcaption>
+            </figure>
             <div class="project-body">
-                <h3 class="project-title">Multiplayer Horror Game</h3>
-                <p class="project-blurb">
-                Co-op horror prototype with matchmaking, VOIP, and networked props.
-                </p>
-
-                <details class="project-details">
-                <summary>Highlights</summary>
-                <ul class="project-highlights">
-                    <li>Server-authoritative item &amp; interaction system</li>
-                    <li>Proximity voice chat with triggers</li>
-                    <li>Lobby, session browser, and player sync</li>
+                <p class="blurb">Online co-op horror game built on a server-authoritative network model with built-in matchmaking.</p>
+                <ul class="highlights">
+                    <li>Server-authoritative: the server owns game state and validates every client action</li>
+                    <li>RPC calls handle client requests and keep all players synchronized</li>
+                    <li>Built-in matchmaking with lobbies and a session browser</li>
+                    <li>Request safety: the server makes sure every client moves safely between game states together</li>
                 </ul>
-                </details>
-
-                <div class="project-meta">
-                <span class="tag">Unity</span>
-                <span class="tag">C#</span>
-                <span class="tag">Netcode</span>
-                <span class="tag">Multiplayer</span>
-                </div>
-
-                <div class="project-links">
-                <a class="btn" href="https://github.com/noah-yacowar/Multiplayer-Horror-Game" target="_blank" rel="noopener">GitHub</a>
-                <!-- Optional: add a devlog/case study link later
-                <a class="btn btn-ghost" href="/writeups/multiplayer-horror.html">Case Study</a> -->
+                <div class="meta">
+                    <div class="tags"><span>Unity</span><span>C#</span><span>Netcode</span><span>Multiplayer</span></div>
+                    <a class="link" href="https://github.com/noah-yacowar/Multiplayer-Horror-Game" target="_blank" rel="noopener">GitHub &rarr;</a>
                 </div>
             </div>
-            </article>
+        </article>
 
-
-
-
-            <article class="project" data-tags="python reinforcement-learning vision">
-                <a class="project-media" href="img/port3.jpg" target="_blank"><img src="img/port3.jpg" alt="Pong AI screenshot"></a>
-                <div class="project-body">
-                    <h3 class="project-title">Pong AI</h3>
-                    <p class="project-blurb">Classic RL agent that learns to dominate Pong.</p>
-                    <details class="project-details">
-                        <summary>Highlights</summary>
-                        <ul class="project-highlights">
-                        <li>Reward shaping & exploration tuning</li>
-                        <li>Evaluation dashboards</li>
-                        </ul>
-                    </details>
-                    <div class="project-meta">
-                        <span class="tag">Python</span><span class="tag">RL</span>
-                    </div>
-                    <div class="project-links">
-                        <a class="btn" href="https://github.com/noah-yacowar/Pong-AI/tree/main" target="_blank" rel="noopener">GitHub</a>
-                    </div>
-                </div>
-            </article>
-
-            <article class="project" data-tags="c++ robotics embedded mechanical">
-                <a class="project-media" href="img/port2.JPG" target="_blank"><img src="img/port2.JPG" alt="Guitar-playing robot photo"></a>
-                <div class="project-body">
-                <h3 class="project-title">Guitar-Playing Robot</h3>
-                <p class="project-blurb">Custom mechatronic strummer with real-time note control.</p>
-                <details class="project-details">
-                    <summary>Highlights</summary>
-                    <ul class="project-highlights">
-                    <li>Servo control & timing</li>
-                    <li>Note scheduling & debouncing</li>
-                    </ul>
-                </details>
-                <div class="project-meta">
-                    <span class="tag">C++</span><span class="tag">Robotics</span><span class="tag">Embedded</span>
-                </div>
-                <div class="project-links">
-                    <a class="btn" href="https://github.com/noah-yacowar/Guitar-Playing-Robot" target="_blank" rel="noopener">GitHub</a>
-                </div>
-                </div>
-            </article>
-
-            <article class="project" data-tags="unity csharp horror fps">
-            <a class="project-media" href="img/port1.PNG" target="_blank" aria-label="Open full image">
-                <img src="img/port1.PNG" alt="Unity Horror FPS screenshot">
-            </a>
+        <!-- 05 -->
+        <article class="project">
+            <div class="project-head">
+                <span class="index">05</span>
+                <h2>Pong AI</h2>
+            </div>
+            <figure class="plate">
+                <a href="img/port3.jpg" target="_blank" rel="noopener">
+                    <img src="img/port3.jpg" alt="Pong AI">
+                </a>
+                <figcaption>Fig. 05 - Trained agent vs. opponent</figcaption>
+            </figure>
             <div class="project-body">
-                <h3 class="project-title">Unity Horror FPS</h3>
-                <p class="project-blurb">
-                First-person horror shooter prototype built in Unity—designed for tense atmosphere and responsive gameplay.
-                </p>
-
-                <details class="project-details">
-                <summary>Highlights</summary>
-                <ul class="project-highlights">
-                    <li>Procedural lighting & dynamic triggers</li>
-                    <li>Interactive HUD + environmental sound cues</li>
-                    <li>Smooth locomotion and horror pacing fine-tuning</li>
+                <p class="blurb">An AI that teaches itself to play Pong, trained with NEAT.</p>
+                <ul class="highlights">
+                    <li>Evolutionary training using NEAT</li>
+                    <li>Fitness tuned so agents learn to track the ball and return it consistently</li>
                 </ul>
-                </details>
-
-                <div class="project-meta">
-                <span class="tag">Unity</span>
-                <span class="tag">C#</span>
-                <span class="tag">Horror</span>
-                <span class="tag">FPS</span>
-                </div>
-
-                <div class="project-links">
-                <a class="btn" href="https://github.com/noah-yacowar/Unity-HorrorFPS" target="_blank" rel="noopener">GitHub</a>
-                <!-- Optional: future write-up link
-                <a class="btn btn-ghost" href="/writeups/unity-horrorfps.html">Case Study</a> -->
+                <div class="meta">
+                    <div class="tags"><span>Python</span><span>NEAT</span><span>Evolutionary AI</span></div>
+                    <a class="link" href="https://github.com/noah-yacowar/Pong-AI/tree/main" target="_blank" rel="noopener">GitHub &rarr;</a>
                 </div>
             </div>
-            </article>
+        </article>
 
+        <!-- 06 -->
+        <article class="project">
+            <div class="project-head">
+                <span class="index">06</span>
+                <h2>Guitar-Playing Robot</h2>
             </div>
-        </section>
-
-        <section class="section sec5 contact" id="contact">
-            <div class="contact-container">
-                <div class="main-title">
-                <h2>Contact <span>Me</span> <span class="bg-text">Contact Me</span></h2>
-                </div>
-
-                <div class="contact-content-container">
-                <!-- Left: Info + Social + Map -->
-                <aside class="left-contact card">
-                    <h4>Contact me here</h4>
-                    <p>
-                    Thanks for visiting! If you’re looking for a developer or just want to chat about a project, reach out below.
-                    </p>
-
-                    <ul class="contact-info">
-                    <li class="contact-item">
-                        <div class="icon"><i class="fa-solid fa-location-dot"></i></div>
-                        <div>
-                        <div class="label">Location</div>
-                        <div class="value">Waterloo, Ontario, Canada</div>
-                        </div>
-                    </li>
-
-                    <li class="contact-item">
-                        <div class="icon"><i class="fa-solid fa-envelope"></i></div>
-                        <div>
-                        <div class="label">Email</div>
-                        <div class="value"><a href="mailto:noahyacowar@gmail.com">noahyacowar@gmail.com</a></div>
-                        </div>
-                    </li>
-
-                    <li class="contact-item">
-                        <div class="icon"><i class="fa-solid fa-user-graduate"></i></div>
-                        <div>
-                        <div class="label">Education</div>
-                        <div class="value">University of Waterloo</div>
-                        </div>
-                    </li>
-
-                    <li class="contact-item">
-                        <div class="icon"><i class="fa-solid fa-mobile-screen-button"></i></div>
-                        <div>
-                        <div class="label">Mobile</div>
-                        <div class="value"><a href="tel:+16478706663">+1 (647) 870-6663</a></div>
-                        </div>
-                    </li>
-                    </ul>
-
-                    <div class="contact-icons">
-                    <a class="social-link" href="https://www.linkedin.com/in/noah-yacowar/" target="_blank" rel="noopener">
-                        <i class="fa-brands fa-linkedin"></i><span>LinkedIn</span>
-                    </a>
-                    <a class="social-link" href="https://github.com/noah-yacowar" target="_blank" rel="noopener">
-                        <i class="fa-brands fa-github"></i><span>GitHub</span>
-                    </a>
-                    </div>
-
-                    <!-- Map (no API key needed) -->
-                    <div class="map-card">
-                    <iframe
-                        title="Waterloo, Ontario map"
-                        loading="lazy"
-                        referrerpolicy="no-referrer-when-downgrade"
-                        src="https://www.google.com/maps?q=Waterloo,Ontario&output=embed">
-                    </iframe>
-                    </div>
-                </aside>
-
-                <!-- Right: Form -->
-                <div class="right-contact card">
-                    <form class="contact-form"
-                        method="POST"
-                        action="https://formsubmit.co/noahyacowar@gmail.com"
-                        enctype="multipart/form-data">
-                    <!-- formsubmit options -->
-                    <input type="hidden" name="_captcha" value="false">
-                    <!-- Redirect after success (optional): -->
-                    <!-- <input type="hidden" name="_next" value="https://your-site.com/thanks.html"> -->
-                    <!-- Autoresponse (optional): -->
-                    <!-- <input type="hidden" name="_autoresponse" value="Thanks for reaching out—I'll get back to you soon. -Noah"> -->
-                    <!-- Honeypot (spam trap) -->
-                    <input type="text" name="_honey" style="display:none">
-
-                    <div class="input-row">
-                        <div class="input-control">
-                        <label for="c-name">Your Name</label>
-                        <input id="c-name" name="name" type="text" required placeholder="Jane Doe">
-                        </div>
-                        <div class="input-control">
-                        <label for="c-email">Your Email</label>
-                        <input id="c-email" name="email" type="email" required placeholder="jane@example.com">
-                        </div>
-                    </div>
-
-                    <div class="input-control">
-                        <label for="c-subject">Subject</label>
-                        <input id="c-subject" name="_subject" type="text" required placeholder="Let’s work together">
-                    </div>
-
-                    <div class="input-control">
-                        <label for="c-message">Message</label>
-                        <textarea id="c-message" name="message" rows="7" required placeholder="Tell me about your idea…"></textarea>
-                    </div>
-
-                    <div class="submit-btn">
-                        <a href="#" onclick="this.closest('form').submit();" class="main-btn">
-                            <span class="btn-text">Submit</span>
-                            <span class="btn-icon"><i class="fa-solid fa-paper-plane"></i></span>
-                        </a>
-                    </div>
-                    </form>
-                </div>
+            <figure class="plate">
+                <a href="img/port2.JPG" target="_blank" rel="noopener">
+                    <img src="img/port2.JPG" alt="Guitar-playing robot">
+                </a>
+                <figcaption>Fig. 06 - Mechatronic strummer assembly</figcaption>
+            </figure>
+            <div class="project-body">
+                <p class="blurb">A mechatronic robot that plays guitar by itself. It reads colour-coded paper slides that encode notes and whole songs, then plays them back in real time.</p>
+                <ul class="highlights">
+                    <li>Colour-coded paper slides encode notes and songs for the robot to read</li>
+                    <li>Servo control &amp; timing for the strumming mechanism</li>
+                    <li>Note scheduling &amp; debouncing</li>
+                </ul>
+                <div class="meta">
+                    <div class="tags"><span>C++</span><span>Robotics</span><span>Embedded</span></div>
+                    <a class="link" href="https://github.com/noah-yacowar/Guitar-Playing-Robot" target="_blank" rel="noopener">GitHub &rarr;</a>
                 </div>
             </div>
-            </section>
+        </article>
+
+        <!-- 07 -->
+        <article class="project">
+            <div class="project-head">
+                <span class="index">07</span>
+                <h2>Unity Horror FPS</h2>
+            </div>
+            <figure class="plate">
+                <a href="img/port1.PNG" target="_blank" rel="noopener">
+                    <img src="img/port1.PNG" alt="Unity Horror FPS">
+                </a>
+                <figcaption>Fig. 07 - In-game atmosphere and lighting</figcaption>
+            </figure>
+            <div class="project-body">
+                <p class="blurb">First-person horror shooter built in Unity, with procedurally generated maps and an enemy that hunts the player.</p>
+                <ul class="highlights">
+                    <li>Custom map generation system that connects premade prefab room types into new layouts</li>
+                    <li>A* pathfinding drives the enemy through the generated map</li>
+                </ul>
+                <div class="meta">
+                    <div class="tags"><span>Unity</span><span>C#</span><span>Procedural Generation</span><span>A*</span></div>
+                    <a class="link" href="https://github.com/noah-yacowar/Unity-HorrorFPS" target="_blank" rel="noopener">GitHub &rarr;</a>
+                </div>
+            </div>
+        </article>
 
     </main>
 
-    <div class="controls">
-        <div class="control control-1 active-btn " data-id="home">
-            <i class="fa-solid fa-house"></i>
-        </div>
-        <div class="control control-2 " data-id="about">
-            <i class="fa-solid fa-user"></i>
-        </div>
-        <div class="control control-3 " data-id="portfolio">
-            <i class="fa-solid fa-briefcase"></i>
-        </div>
-        <div class="control control-5 " data-id="contact">
-            <i class="fa-solid fa-envelope"></i>
-        </div>
-    </div>
+    <footer class="end label muted">- End of index -</footer>
 
-    <div class="theme-btn">
-        <i class="fa-solid fa-circle-half-stroke"></i>
-    </div>
+    <script>
+        (function () {
+            var mold = document.querySelector('.mold');
+            var btn = document.querySelector('.inject-btn');
+            if (!mold || !mold.setCurrentTime) return;
+            var CYCLE_MS = 5500;   // length of one injection cycle
 
-    <script src="app.js"></script>
+            // Respect reduced motion: show the finished part, no button
+            if (window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+                mold.setCurrentTime(10);
+                mold.pauseAnimations();
+                if (btn) btn.parentNode.style.display = 'none';
+                return;
+            }
+
+            var busy = true;
+            function ready() { busy = false; btn.disabled = false; }
+            setTimeout(ready, CYCLE_MS);
+
+            // Drop the finished part out of the mold and off the bottom of the screen
+            function ejectPart() {
+                var r = mold.getBoundingClientRect();
+                var ns = 'http://www.w3.org/2000/svg';
+                var part = document.createElementNS(ns, 'svg');
+                part.setAttribute('viewBox', '0 0 1100 300');
+                part.setAttribute('aria-hidden', 'true');
+                part.style.cssText = 'position:fixed;left:' + r.left + 'px;top:' + r.top + 'px;width:' + r.width +
+                    'px;height:' + r.height + 'px;pointer-events:none;z-index:50;overflow:visible;font-family:inherit;' +
+                    'filter:drop-shadow(0 8px 6px rgba(0,0,0,.22));';
+                var u = document.createElementNS(ns, 'use');
+                u.setAttribute('href', '#nm');
+                u.setAttribute('fill', '#ff5a1f');
+                part.appendChild(u);
+                document.body.appendChild(part);
+
+                var fall = window.innerHeight - r.top + r.height;
+                var tilt = (Math.random() < 0.5 ? -1 : 1) * (6 + Math.random() * 8);
+                var anim = part.animate([
+                    { transform: 'translate(0, 0) rotate(0deg)' },
+                    { transform: 'translate(0, -8px) rotate(0deg)', offset: 0.12 },
+                    { transform: 'translate(' + (tilt * 3) + 'px, ' + fall + 'px) rotate(' + tilt + 'deg)' }
+                ], { duration: 1100, easing: 'cubic-bezier(.55, 0, .9, .55)', fill: 'forwards' });
+                anim.onfinish = function () { part.remove(); };
+            }
+
+            function inject() {
+                if (busy) return;
+                busy = true;
+                btn.disabled = true;
+                ejectPart();
+                mold.setCurrentTime(0);
+                setTimeout(ready, CYCLE_MS);
+            }
+
+            btn.addEventListener('click', inject);
+            mold.addEventListener('click', inject);
+        })();
+    </script>
+
 </body>
 </html>

@@ -1,0 +1,275 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Noah Yacowar</title>
+    <link rel="shortcut icon" type="image/png" href="img/favicon1.png">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500&family=Space+Grotesk:wght@400;500;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles/lab.css">
+</head>
+<body>
+
+    <header class="masthead">
+        <p class="label">Portfolio &mdash; Index of Projects</p>
+        <h1 class="sr-only">Noah Yacowar</h1>
+
+        <!-- Injection-moulded name: grey mold, orange plastic fills the cavity -->
+        <svg class="mold" viewBox="0 0 1100 300" aria-hidden="true">
+            <title>Click to run the cycle again</title>
+            <defs>
+                <text id="nm" x="195" y="192" font-size="120" font-weight="700"
+                      textLength="840" lengthAdjust="spacing">Noah Yacowar</text>
+
+                <clipPath id="cavity-clip"><use href="#nm"/></clipPath>
+
+                <linearGradient id="steel" x1="0" y1="0" x2="0" y2="1">
+                    <stop offset="0" stop-color="#dcdcd8"/>
+                    <stop offset="1" stop-color="#bcbcb7"/>
+                </linearGradient>
+                <linearGradient id="barrel" x1="0" y1="0" x2="0" y2="1">
+                    <stop offset="0" stop-color="#9a9a95"/>
+                    <stop offset=".45" stop-color="#e2e2de"/>
+                    <stop offset="1" stop-color="#7d7d78"/>
+                </linearGradient>
+                <linearGradient id="front" x1="0" y1="0" x2="1" y2="0">
+                    <stop offset="0" stop-color="#ffd59a" stop-opacity="0"/>
+                    <stop offset="1" stop-color="#fff1d6" stop-opacity=".9"/>
+                </linearGradient>
+
+                <!-- recessed / engraved look for the empty cavity -->
+                <filter id="inset" x="-5%" y="-5%" width="110%" height="110%">
+                    <feOffset in="SourceAlpha" dx="0" dy="4" result="off"/>
+                    <feGaussianBlur in="off" stdDeviation="2.5" result="blur"/>
+                    <feComposite in="SourceAlpha" in2="blur" operator="arithmetic" k2="1" k3="-1" result="inner"/>
+                    <feFlood flood-color="#000" flood-opacity=".5"/>
+                    <feComposite in2="inner" operator="in" result="shadow"/>
+                    <feMerge><feMergeNode in="SourceGraphic"/><feMergeNode in="shadow"/></feMerge>
+                </filter>
+            </defs>
+
+            <!-- mold block -->
+            <rect x="130" y="40" width="950" height="220" rx="8" fill="url(#steel)" stroke="#a3a39e" stroke-width="2"/>
+            <rect x="142" y="52" width="926" height="196" rx="4" fill="none" stroke="#cfcfca" stroke-width="1"/>
+            <g fill="#c4c4bf" stroke="#92928d" stroke-width="1.5">
+                <circle cx="158" cy="68" r="8"/><circle cx="1052" cy="68" r="8"/>
+                <circle cx="158" cy="232" r="8"/><circle cx="1052" cy="232" r="8"/>
+            </g>
+            <g stroke="#92928d" stroke-width="1.5">
+                <path d="M153 68h10M1047 68h10M153 232h10M1047 232h10"/>
+            </g>
+
+            <!-- sprue channel + letter cavity -->
+            <rect x="130" y="144" width="72" height="12" fill="#9b9b96" filter="url(#inset)"/>
+            <use href="#nm" fill="#9b9b96" stroke="#85857f" stroke-width="1.2" filter="url(#inset)"/>
+
+            <!-- plastic in the sprue -->
+            <line x1="130" y1="150" x2="202" y2="150" stroke="#ffb547" stroke-width="10"
+                  stroke-dasharray="72" stroke-dashoffset="72">
+                <animate attributeName="stroke-dashoffset" from="72" to="0" begin="0.8s" dur="0.3s" fill="freeze"/>
+                <animate attributeName="stroke" values="#ffb547;#ff5a1f" begin="3.3s" dur="1.2s" fill="freeze"/>
+                <!-- sprue gets trimmed off the finished part -->
+                <animate attributeName="opacity" from="1" to="0" begin="4.9s" dur="0.5s" fill="freeze"/>
+            </line>
+
+            <!-- plastic filling the letters, left to right from the gate -->
+            <g clip-path="url(#cavity-clip)">
+                <rect x="185" y="60" width="0" height="180" fill="#ffb547">
+                    <animate attributeName="width" from="0" to="880" begin="1.05s" dur="2.3s"
+                             calcMode="spline" keyTimes="0;1" keySplines=".35 0 .55 1" fill="freeze"/>
+                    <animate attributeName="fill" values="#ffb547;#ff5a1f" begin="3.3s" dur="1.2s" fill="freeze"/>
+                </rect>
+                <rect x="150" y="60" width="36" height="180" fill="url(#front)" opacity="0">
+                    <set attributeName="opacity" to="1" begin="1.05s"/>
+                    <animate attributeName="x" from="150" to="1030" begin="1.05s" dur="2.3s"
+                             calcMode="spline" keyTimes="0;1" keySplines=".35 0 .55 1" fill="freeze"/>
+                    <animate attributeName="opacity" from="1" to="0" begin="3.3s" dur="0.4s" fill="freeze"/>
+                </rect>
+            </g>
+
+            <!-- injection unit: hopper, barrel, heater bands, nozzle -->
+            <g transform="translate(-80 0)">
+                <animateTransform attributeName="transform" type="translate" from="-80 0" to="0 0"
+                                  begin="0.2s" dur="0.6s" calcMode="spline" keyTimes="0;1" keySplines=".4 0 .2 1" fill="freeze"/>
+                <animateTransform attributeName="transform" type="translate" from="0 0" to="-60 0"
+                                  begin="4.5s" dur="0.6s" calcMode="spline" keyTimes="0;1" keySplines=".4 0 .2 1" fill="freeze"/>
+                <polygon points="34,128 84,128 96,92 22,92" fill="#c9c9c4" stroke="#8a8a85" stroke-width="1.5"/>
+                <rect x="0" y="128" width="120" height="44" fill="url(#barrel)" stroke="#7d7d78" stroke-width="1.5"/>
+                <g fill="#55554f">
+                    <rect x="16" y="124" width="10" height="52" rx="2"/>
+                    <rect x="48" y="124" width="10" height="52" rx="2"/>
+                    <rect x="94" y="124" width="10" height="52" rx="2"/>
+                </g>
+                <polygon points="120,134 132,143 132,157 120,166" fill="#8a8a85"/>
+            </g>
+
+            <!-- machine readout -->
+            <text class="readout" x="176" y="246" fill="#85857f">MOLD NY-01 / CAV 1</text>
+            <text class="readout" x="1034" y="246" text-anchor="end" fill="#ff5a1f" visibility="hidden">
+                &#9679; INJECTING
+                <set attributeName="visibility" to="visible" begin="0.8s"/>
+                <set attributeName="visibility" to="hidden" begin="4.5s"/>
+            </text>
+            <text class="readout" x="1034" y="246" text-anchor="end" fill="#55554f" visibility="hidden">
+                CYCLE 001 &#183; PART OK
+                <set attributeName="visibility" to="visible" begin="4.5s"/>
+            </text>
+        </svg>
+
+        <p class="label muted">Mechatronics Engineering &middot; University of Waterloo</p>
+    </header>
+
+    <main class="projects">
+
+        <!-- 01 -->
+        <article class="project">
+            <div class="project-head">
+                <span class="index">01</span>
+                <h2>AI-MU Motion Capture</h2>
+            </div>
+            <figure class="plate">
+                <a href="img/port5.png" target="_blank" rel="noopener">
+                    <img src="img/port5.png" alt="AI-MU Motion Capture">
+                </a>
+                <figcaption>Fig. 01 &mdash; ESP8266 IMU trackers, live in Unity</figcaption>
+            </figure>
+            <div class="project-body">
+                <p class="blurb">Modular real-time motion capture using ESP8266-based IMU trackers and live visualization in Unity.</p>
+                <ul class="highlights">
+                    <li>Custom ESP8266 + BNO080 IMU trackers streaming over Wi-Fi at 100 Hz</li>
+                    <li>Live skeleton visualization &amp; sensor calibration</li>
+                    <li>Export tracking data to BVH or FBX for animation pipelines</li>
+                </ul>
+                <div class="meta">
+                    <div class="tags"><span>Python</span><span>IMU</span><span>Motion Capture</span><span>Unity</span></div>
+                    <a class="link" href="https://github.com/noah-yacowar/AI-MU-Motion-Capture" target="_blank" rel="noopener">GitHub &rarr;</a>
+                </div>
+            </div>
+        </article>
+
+        <!-- 02 -->
+        <article class="project">
+            <div class="project-head">
+                <span class="index">02</span>
+                <h2>Multiplayer Horror Game</h2>
+            </div>
+            <figure class="plate">
+                <a href="img/port4.png" target="_blank" rel="noopener">
+                    <img src="img/port4.png" alt="Multiplayer Horror Game">
+                </a>
+                <figcaption>Fig. 02 &mdash; Co-op session in progress</figcaption>
+            </figure>
+            <div class="project-body">
+                <p class="blurb">Co-op horror prototype with matchmaking, VOIP, and networked props.</p>
+                <ul class="highlights">
+                    <li>Server-authoritative item &amp; interaction system</li>
+                    <li>Proximity voice chat with triggers</li>
+                    <li>Lobby, session browser, and player sync</li>
+                </ul>
+                <div class="meta">
+                    <div class="tags"><span>Unity</span><span>C#</span><span>Netcode</span><span>Multiplayer</span></div>
+                    <a class="link" href="https://github.com/noah-yacowar/Multiplayer-Horror-Game" target="_blank" rel="noopener">GitHub &rarr;</a>
+                </div>
+            </div>
+        </article>
+
+        <!-- 03 -->
+        <article class="project">
+            <div class="project-head">
+                <span class="index">03</span>
+                <h2>Pong AI</h2>
+            </div>
+            <figure class="plate">
+                <a href="img/port3.jpg" target="_blank" rel="noopener">
+                    <img src="img/port3.jpg" alt="Pong AI">
+                </a>
+                <figcaption>Fig. 03 &mdash; Trained agent vs. opponent</figcaption>
+            </figure>
+            <div class="project-body">
+                <p class="blurb">Classic RL agent that learns to dominate Pong.</p>
+                <ul class="highlights">
+                    <li>Reward shaping &amp; exploration tuning</li>
+                    <li>Evaluation dashboards</li>
+                </ul>
+                <div class="meta">
+                    <div class="tags"><span>Python</span><span>RL</span></div>
+                    <a class="link" href="https://github.com/noah-yacowar/Pong-AI/tree/main" target="_blank" rel="noopener">GitHub &rarr;</a>
+                </div>
+            </div>
+        </article>
+
+        <!-- 04 -->
+        <article class="project">
+            <div class="project-head">
+                <span class="index">04</span>
+                <h2>Guitar-Playing Robot</h2>
+            </div>
+            <figure class="plate">
+                <a href="img/port2.JPG" target="_blank" rel="noopener">
+                    <img src="img/port2.JPG" alt="Guitar-playing robot">
+                </a>
+                <figcaption>Fig. 04 &mdash; Mechatronic strummer assembly</figcaption>
+            </figure>
+            <div class="project-body">
+                <p class="blurb">Custom mechatronic strummer with real-time note control.</p>
+                <ul class="highlights">
+                    <li>Servo control &amp; timing</li>
+                    <li>Note scheduling &amp; debouncing</li>
+                </ul>
+                <div class="meta">
+                    <div class="tags"><span>C++</span><span>Robotics</span><span>Embedded</span></div>
+                    <a class="link" href="https://github.com/noah-yacowar/Guitar-Playing-Robot" target="_blank" rel="noopener">GitHub &rarr;</a>
+                </div>
+            </div>
+        </article>
+
+        <!-- 05 -->
+        <article class="project">
+            <div class="project-head">
+                <span class="index">05</span>
+                <h2>Unity Horror FPS</h2>
+            </div>
+            <figure class="plate">
+                <a href="img/port1.PNG" target="_blank" rel="noopener">
+                    <img src="img/port1.PNG" alt="Unity Horror FPS">
+                </a>
+                <figcaption>Fig. 05 &mdash; In-game atmosphere and lighting</figcaption>
+            </figure>
+            <div class="project-body">
+                <p class="blurb">First-person horror shooter prototype built in Unity, designed for tense atmosphere and responsive gameplay.</p>
+                <ul class="highlights">
+                    <li>Procedural lighting &amp; dynamic triggers</li>
+                    <li>Interactive HUD + environmental sound cues</li>
+                    <li>Smooth locomotion and horror pacing fine-tuning</li>
+                </ul>
+                <div class="meta">
+                    <div class="tags"><span>Unity</span><span>C#</span><span>Horror</span><span>FPS</span></div>
+                    <a class="link" href="https://github.com/noah-yacowar/Unity-HorrorFPS" target="_blank" rel="noopener">GitHub &rarr;</a>
+                </div>
+            </div>
+        </article>
+
+    </main>
+
+    <footer class="end label muted">&mdash; End of index &mdash;</footer>
+
+    <script>
+        (function () {
+            var mold = document.querySelector('.mold');
+            if (!mold || !mold.setCurrentTime) return;
+            // Respect reduced-motion: show the finished part straight away
+            if (window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+                mold.setCurrentTime(10);
+                mold.pauseAnimations();
+                return;
+            }
+            // Click the mold to run another cycle
+            mold.addEventListener('click', function () { mold.setCurrentTime(0); });
+        })();
+    </script>
+
+</body>
+</html>

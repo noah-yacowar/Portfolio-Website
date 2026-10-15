@@ -1,0 +1,270 @@
+/* Lab theme: white, greys, safety orange */
+:root {
+    --paper: #f6f6f4;
+    --white: #ffffff;
+    --grid: #e6e6e3;
+    --line: #d4d4d0;
+    --grey-1: #8a8a86;
+    --grey-2: #55554f;
+    --ink: #1d1d1b;
+    --orange: #ff5a1f;
+
+    --mono: "IBM Plex Mono", ui-monospace, monospace;
+    --sans: "Space Grotesk", system-ui, sans-serif;
+}
+
+* { box-sizing: border-box; margin: 0; padding: 0; }
+
+html { scroll-behavior: smooth; }
+
+body {
+    background-color: var(--paper);
+    /* graph-paper grid */
+    background-image:
+        linear-gradient(var(--grid) 1px, transparent 1px),
+        linear-gradient(90deg, var(--grid) 1px, transparent 1px);
+    background-size: 24px 24px;
+    color: var(--ink);
+    font-family: var(--sans);
+    line-height: 1.55;
+    padding: 0 16px;
+}
+
+.label {
+    font-family: var(--mono);
+    font-size: 0.78rem;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--orange);
+}
+.label.muted { color: var(--grey-1); }
+
+/* ---------- Name ---------- */
+.masthead {
+    max-width: 880px;
+    margin: 0 auto;
+    padding: 96px 0 64px;
+    border-bottom: 2px solid var(--ink);
+}
+.sr-only {
+    position: absolute;
+    width: 1px; height: 1px;
+    overflow: hidden;
+    clip: rect(0 0 0 0);
+    white-space: nowrap;
+}
+
+/* Injection-moulded name */
+.mold {
+    display: block;
+    width: 100%;
+    height: auto;
+    margin: 18px 0 16px;
+    cursor: pointer;
+    font-family: var(--sans);
+}
+.mold .readout {
+    font-family: var(--mono);
+    font-size: 13px;
+    letter-spacing: 0.12em;
+}
+
+/* ---------- Projects ---------- */
+.projects {
+    max-width: 880px;
+    margin: 0 auto;
+}
+
+.project {
+    padding: 72px 0;
+    border-bottom: 1px dashed var(--line);
+}
+
+.project-head {
+    display: flex;
+    align-items: baseline;
+    gap: 18px;
+    margin-bottom: 24px;
+}
+.index {
+    font-family: var(--mono);
+    font-size: 0.9rem;
+    font-weight: 500;
+    color: var(--white);
+    background: var(--orange);
+    padding: 2px 8px;
+    flex-shrink: 0;
+    transform: translateY(-4px);
+}
+.project-head h2 {
+    font-size: clamp(1.6rem, 4.5vw, 2.4rem);
+    font-weight: 700;
+    letter-spacing: -0.02em;
+    line-height: 1.1;
+}
+
+/* Image plate with corner registration marks */
+.plate {
+    position: relative;
+    background: var(--white);
+    border: 1px solid var(--line);
+    padding: 14px;
+}
+.plate::before,
+.plate::after {
+    content: "";
+    position: absolute;
+    width: 14px;
+    height: 14px;
+    border: 2px solid var(--orange);
+}
+.plate::before { top: -6px; left: -6px; border-right: 0; border-bottom: 0; }
+.plate::after  { bottom: -6px; right: -6px; border-left: 0; border-top: 0; }
+
+.plate a { display: block; background: #ececea; }
+.plate img {
+    display: block;
+    width: 100%;
+    max-height: 560px;
+    object-fit: contain;
+    transition: opacity 0.2s;
+}
+.plate a:hover img { opacity: 0.92; }
+
+.plate figcaption {
+    font-family: var(--mono);
+    font-size: 0.75rem;
+    color: var(--grey-1);
+    padding-top: 12px;
+    letter-spacing: 0.04em;
+}
+
+.project-body { padding-top: 28px; }
+
+.blurb {
+    font-size: 1.15rem;
+    color: var(--ink);
+    max-width: 62ch;
+}
+
+.highlights {
+    list-style: none;
+    margin: 18px 0 0;
+    max-width: 62ch;
+}
+.highlights li {
+    position: relative;
+    padding-left: 22px;
+    color: var(--grey-2);
+    margin-bottom: 6px;
+}
+.highlights li::before {
+    content: "";
+    position: absolute;
+    left: 2px;
+    top: 0.62em;
+    width: 8px;
+    height: 2px;
+    background: var(--orange);
+}
+
+.meta {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-between;
+    gap: 16px;
+    margin-top: 26px;
+}
+.tags { display: flex; flex-wrap: wrap; gap: 8px; }
+.tags span {
+    font-family: var(--mono);
+    font-size: 0.72rem;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    color: var(--grey-2);
+    background: var(--white);
+    border: 1px solid var(--line);
+    padding: 4px 9px;
+}
+
+.link {
+    font-family: var(--mono);
+    font-size: 0.85rem;
+    font-weight: 500;
+    color: var(--ink);
+    text-decoration: none;
+    border: 2px solid var(--ink);
+    padding: 8px 16px;
+    transition: background 0.15s, color 0.15s, border-color 0.15s;
+}
+.link:hover {
+    background: var(--orange);
+    border-color: var(--orange);
+    color: var(--white);
+}
+
+.end {
+    text-align: center;
+    padding: 56px 0 72px;
+}
+
+@media (max-width: 600px) {
+    .masthead { padding: 64px 0 44px; }
+    .project { padding: 52px 0; }
+    .plate { padding: 10px; }
+}
+
+/* Work-in-progress badge */
+.wip {
+    font-family: var(--mono);
+    font-size: 0.72rem;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    color: var(--orange);
+    border: 1.5px dashed var(--orange);
+    padding: 3px 8px;
+    white-space: nowrap;
+    transform: translateY(-6px);
+}
+.project-head { flex-wrap: wrap; row-gap: 10px; }
+
+/* Project subtitle after the name, e.g. "— PCB probing agent" */
+.project-head h2 .sub {
+    font-weight: 400;
+    color: var(--grey-1);
+}
+
+/* INJECT button under the mold */
+.inject-row {
+    display: flex;
+    justify-content: center;
+    padding-left: 11.8%;      /* line up with the mold block, not the nozzle */
+    margin: 4px 0 22px;
+}
+.inject-btn {
+    font-family: var(--mono);
+    font-size: 0.85rem;
+    font-weight: 500;
+    letter-spacing: 0.22em;
+    color: var(--white);
+    background: var(--orange);
+    border: 2px solid #c94012;
+    border-radius: 4px;
+    padding: 10px 26px 10px 30px;
+    box-shadow: 0 4px 0 #c94012;
+    cursor: pointer;
+    transition: transform 0.08s, box-shadow 0.08s, background 0.2s;
+}
+.inject-btn:hover:not(:disabled) { background: #ff6d38; }
+.inject-btn:active:not(:disabled) {
+    transform: translateY(4px);
+    box-shadow: 0 0 0 #c94012;
+}
+.inject-btn:disabled {
+    background: #c9c9c4;
+    border-color: #a3a39e;
+    box-shadow: 0 4px 0 #a3a39e;
+    color: #f2f2ef;
+    cursor: not-allowed;
+}
